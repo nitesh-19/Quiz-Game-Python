@@ -7,4 +7,6 @@ for dictionary in question_data:
     question = Question(dictionary["text"], dictionary["answer"])
     question_bank.append(question)
 quiz = QuizBrain(question_bank)
-quiz.ask_question()
+
+while quiz.still_has_questions(question_bank):
+    quiz.ask_question()
